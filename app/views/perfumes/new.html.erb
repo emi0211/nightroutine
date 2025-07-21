@@ -1,0 +1,91 @@
+<%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+    <!-- app/views/perfumes/new.html.erb -->
+<div class="diagnosis-container">
+
+  <div class="question-block q1">
+    <%= image_tag "night_sky.jpg", class: "question-bg" %>
+
+    <p class="question-text">Q1. 今の気分に一番近いのは？</p>
+    <div class="options">
+      <%= radio_button_tag :q1, 'tired' %><label>疲れている</label>
+      <%= radio_button_tag :q1, 'energetic' %><label>元気が有り余っている</label>
+      <%= radio_button_tag :q1, 'uncertain' %><label>なんとなくモヤモヤしている</label>
+    </div>
+  </div>
+
+  <div class="question-block q2">
+    <%= image_tag "night_sky2.jpg", class: "question-bg" %>
+
+    <p class="question-text">Q2. 一人の時間は好き?</p>
+    <div class="options">
+      <%= radio_button_tag :q2, 'yes' %><label>はい</label>
+      <%= radio_button_tag :q2, 'no' %><label>いいえ</label>
+    </div>
+  </div>
+
+  <div class="question-block q3">
+    <%= image_tag "night_sky3.jpg", class: "question-bg" %>
+
+    <p class="question-text">Q3. 明日の朝の予定は？</p>
+    <div class="options">
+      <%= radio_button_tag :q3, 'busy' %><label>朝から忙しい</label>
+      <%= radio_button_tag :q3, 'slowly' %><label>少しゆっくりできそう</label>
+      
+    </div>
+  </div>
+
+  <div class="question-block q4">
+    <%= image_tag "night_sky4.jpg", class: "question-bg" %>
+
+    <p class="question-text">Q4. 今日の理想の夜は？</p>
+    <div class="options">
+      <%= radio_button_tag :q4, 'calming' %><label>ほっと落ち着く静かな夜</label>
+      <%= radio_button_tag :q4, 'spoil' %><label>自分を甘やかす夜</label>
+      <%= radio_button_tag :q4, 'mind' %><label>感性・意識高めな夜</label>
+      <%= radio_button_tag :q4, 'growth' %><label>明日のための成長の夜</label>
+    </div>
+  </div>
+
+  <!-- Q2, Q3, Q4 も同様にブロックで分けて書く -->
+
+  <%= submit_tag "結果", class: "submit-button" %>
+
+</div>
+        <div class="col-12">
+            <p>Q2. 一人の時間は好き？</p>
+        </div> 
+        <div class="col-6">
+            <%= f.radio_button :question2, "1", id: "custom_id4" %>
+            <label for="custom_id3">はい</label>
+            <%= f.radio_button :question2, "2", id: "custom_id5" %>
+            <label for="custom_id4">いいえ</label>
+            
+        </div>   
+        <div class="col-12">
+            <p>Q3. 明日の朝の予定は？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question3, "1", id: "custom_id6" %>
+            <label for="custom_id5">朝から忙しい</label>
+            <%= f.radio_button :question3, "2", id: "custom_id7" %>
+            <label for="custom_id6">少しゆっくりできそう</label>
+        </div>
+    
+        <div class="col-12">
+            <p>Q4. 今日の理想の夜は？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question4, "1", id: "custom_id8" %>
+            <label for="custom_id7">ほっと落ち着く静かな夜</label>
+            <%= f.radio_button :question4, "2", id: "custom_id9" %>
+            <label for="custom_id8">自分を甘やかす夜</label>
+            <%= f.radio_button :question4, "3", id: "custom_id10" %>
+            <label for="custom_id7">感性・意識高めな夜</label>
+            <%= f.radio_button :question4, "4", id: "custom_id11" %>
+            <label for="custom_id7">明日のための成長の夜</label>
+        </div>
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit " 結果 " %>
+    </div>
+<% end %>

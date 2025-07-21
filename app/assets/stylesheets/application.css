@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+.top {
+  position: relative;
+  display: inline-block; /* 必要なら */
+}
+.top_image {
+  display: block;
+  width: 100%;
+  
+}
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  writing-mode: vertical-rl; /* 縦書きにしたいなら */
+  color: white;
+  font-size: 17px;
+  font-family: "Shippori Mincho", serif;
+  line-height: 2; /* 数字：1.5〜2くらいがおすすめ */
+  letter-spacing: 7px; /* 文字と文字の間を2px空ける */
+
+}
+
+body {
+  background-color: #626476;
+}
+
+.sub-text {
+  color: white;
+  font-family: "Shippori Mincho", serif;
+  font-size: 24px;
+  line-height: 45px; /* ← Figmaと同じ */
+  text-align: center;
+  margin-top: 45px;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 32px 64px;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 29px;
+  font-family: "Shippori Mincho", serif;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+  margin-top: 24px;
+  
+  
+}
+
+/* ホバー時の効果（任意） */
+.start-button:hover {
+  background-color: white;
+  color: #626476; /* 背景と同じ色にする */
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.auth-button-link {
+  display: inline-block;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-family: "Shippori Mincho", serif;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button-link:hover {
+  background-color: white;
+  color: #626476;
+}
+
+.link-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* ボタン間の余白 */
+  margin-top: 30px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: "Shippori Mincho", serif;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+.link-button:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+

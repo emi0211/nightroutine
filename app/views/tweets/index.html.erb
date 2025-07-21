@@ -1,0 +1,91 @@
+<div class="top">
+ <%= image_tag("top.png",class: "top_image") %>
+
+
+ <div class="main-text">
+  <h1>みつけよう<br>　　あなたにぴったりの夜</h1>
+ </div>
+
+ <div class="sub-text">
+  <p>気がつけば、寝る直前までスマホを見ていた＿＿。</p>
+  <p>そんな “なんとなく終わってしまう夜” は、少し勿体無い気がしませんか？</p>
+  <p>今の気分から、</p>
+  <p>あなたにぴったりの「夜の過ごし方」を提案します。</p>
+</div>
+</div>
+
+<%= link_to "新規投稿へ", new_tweet_path %>
+
+<div class="tweets-container">
+
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+<div class="button-container">
+ <%= link_to "診断スタート", new_perfume_path, class: "start-button" %>
+</div>
+ <div class="link-buttons">
+  <%= button_to "ログイン", new_user_session_path, method: :get, class: "link-button" %>
+  <%= button_to "新規登録", new_user_registration_path, method: :get, class: "link-button" %>
+  <%= button_to "新規投稿へ", new_tweet_path, method: :get, class: "link-button" %>
+  <%= button_to "マイページへ", user_path(current_user.id), method: :get, class: "link-button" if user_signed_in? %>
+</div>
+
+  <%# このループ一つですべてのツイート情報を表示します %>
+  <% @tweets.each do |t| %>
+
+    <%= link_to t.user.name, user_path(t.user.id) %>
+
+    <div class="tweet">
+
+      <%# --- 投稿内容の表示 --- %>
+      <p><strong>投稿者:</strong><%= t.user.email %></p>
+      <ul>
+        <li>Beauty: <%= t.beauty %></li>
+        <li>Food: <%= t.food %></li>
+        <li>Study: <%= t.study %></li>
+        <li>Entertainment: <%= t.entertainment %></li>
+      </ul>
+
+      <% if t.image.attached? %>
+        <%= image_tag t.image, style: 'max-width: 200px; max-height: 200px;' %>
+      <% end %>
+      <%# --- ここまでが投稿内容 --- %>
+
+
+      <hr> <%# 区切り線 %>
+
+
+      <%# --- ここからがいいね機能です --- %>
+      <% if user_signed_in? %>
+  <%# ↓ まず、現在のユーザーの「いいね」を探して、変数 like に格納します %>
+  <% like = current_user.likes.find_by(tweet_id: t.id) %>
+  
+  <%# ↓ 変数 like が存在するかどうかで、ボタンを出し分けます %>
+  <% if like %>
+    <%# いいね済みの場合 → いいねを取り消すボタン %>
+    <%# ↓ tweet_like_path に (t, like) の2つを渡します %>
+    <%= link_to "いいね解除", tweet_like_path(t, like), data: { "turbo-method": :delete } %>
+  <% else %>
+    <%# まだいいねしていない場合 → いいねをするボタン %>
+    <%= link_to "いいね", tweet_likes_path(t), data: { "turbo-method": :post } %>
+  <% end %>
+<% end %>
+
+<%# いいねの数を表示 %>
+<span>いいねの数: <%= t.likes.count %></span>
+  
+      <%# --- ここまでがいいね機能 --- %>
+
+    </div>
+    <hr> <%# 各ツイートの区切り線 %>
+  <% end %> <%# eachループの終わり %>
+
+</div>
+
+
+
+
+
+
+
