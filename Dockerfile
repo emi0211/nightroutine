@@ -10,7 +10,7 @@ FROM --platform=linux/amd64 ruby:3.2
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.2.8
-FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+FROM docker.io/library/ruby:3.2.8-slim AS base
 
 # Rails app lives here
 WORKDIR /rails
