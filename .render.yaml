@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: nightroutine
+    env: ruby
+    buildCommand: |
+      bundle install
+      rails db:migrate RAILS_ENV=production
+      rails assets:precompile
+    startCommand: bundle exec puma -C config/puma.rb
+    envVars:
+      - key: RAILS_ENV
+        value: production
