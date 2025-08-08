@@ -1,3 +1,14 @@
+.diagnosis-title{
+ 
+  text-align: center;
+  font-size: 25px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+
+
+
 .diagnosis-container {
   max-width: 800px;
   margin: 0 auto;
@@ -20,7 +31,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 1;
   z-index: 1;
 }
 
@@ -51,5 +62,11 @@
   border-radius: 20px;
   color: #fff;
   font-size: 16px;
+  font-family: "Shippori Mincho", serif;
+  margin-bottom: 100px;
 }
 
+/* ホバー時の効果（任意） */
+.submit-button:hover {
+  background-color: white;
+  color: #626476; /* 背景と同じ色にする */}

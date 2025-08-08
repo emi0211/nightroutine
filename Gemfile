@@ -68,5 +68,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'font-awesome-sass', '~> 6.1'
+
 gem 'devise'
 

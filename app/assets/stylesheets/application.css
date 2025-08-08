@@ -92,8 +92,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* ボタン間の余白 */
-  margin-top: 30px;
+  gap: 10px; /* ボタン間の余白 */
+  margin-top: 100px;
+  text-align: center; /* 中央揃えなら */
+  list-style: none; /* ← これで左の●が消えます */
 }
 
 .link-button {
@@ -103,22 +105,71 @@ body {
   font-family: "Shippori Mincho", serif;
   font-size: 18px;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 10px 10px;
   text-align: center;
   transition: opacity 0.3s;
+  
 }
 
 .link-button:hover {
   opacity: 0.7;
 }
 
+/*
+ *= require diagnosis
+*/
+
+/* 箇条書きの点を消す */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* リンクの下線を消す & 色やフォントを統一 */
+ul li a,
+.link-button,
+.auth-button-Link a {
+  text-decoration: none;
+  color: white; /* 必要に応じて色を変更 */
+  font-family: "Shippori Mincho", serif;
+  font-size: 30px;
+}
+
+/* ホバー効果を揃える（任意） */
+ul li a:hover,
+.link-button:hover {
+  opacity: 0.7;
+}
+
+
+.link-buttons li {
+  margin-bottom: 65px; /* 行間隔の調整 */
+}
 
 
 
 
+.tweets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 30px;
+  background-color: #626476; /* Figmaに合わせた背景色 */
+}
 
+.tweet-card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: #333;
+  transition: transform 0.2s;
+}
 
-
-
-
+.tweet-card:hover {
+  transform: scale(1.03);
+}
 

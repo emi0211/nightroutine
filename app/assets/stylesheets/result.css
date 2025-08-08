@@ -1,0 +1,131 @@
+.result-page {
+ 
+  background: linear-gradient(0deg, #ccae9f 0%, #28305d 40%, #050847 80%) no-repeat #383d95;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.result-title {
+  font-size: 36px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.8px;
+}
+
+.result-card {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  border-radius: 10px;
+ 
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  
+  width: 100%;     /* 必要に応じて幅を調整 */
+  
+}
+
+.main-message {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.result-container h6 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  font-family: "Shippori Mincho", serif;
+  margin: 2rem 0 2rem; /* ← 上下に1remずつ余白 */
+}
+
+.result-container p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: "Shippori Mincho", serif;
+}
+
+
+.back-to-top {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.top-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.top-button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* 星空の背景のスタイル */
+.stars {
+  position: relative;
+  width: 100%; /* 星空の横幅 */
+  height: 100vh; /* 星空の縦幅 */
+  background: linear-gradient(0deg, #ccae9f 0%, #28305d 40%, #050847 80%) no-repeat #383d95;/* 星空の背景色 */
+  overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */
+}
+
+/* 星のスタイル */
+.star {
+  position: absolute;
+  display: block;
+  background-color: #fff; /* 星の色 */
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(#fff, 0.2); /* 星の影 */
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+/* 星がキラキラ光るアニメーション */
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

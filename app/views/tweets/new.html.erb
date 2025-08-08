@@ -1,3 +1,4 @@
+<div class="night-form-page">
 <h3>自分のナイトルーティーンのこだわり投稿ページ</h3>
 
 <%# @tweet というオブジェクトを元にフォームを作成します %>
@@ -38,7 +39,7 @@
 
 <% end %> <%# form_with はここで終わり %>
 
-<%= link_to "一覧に戻る", tweets_path %>
+<%= link_to "TOPへ戻る", root_path, class: "top-button" %>
 
 
 <%# --- 画像プレビュー用のJavaScript --- %>
@@ -67,6 +68,7 @@
     });
   });
 </script>
+</div>
 
 
 

@@ -1,32 +1,41 @@
-<h1>users#show</h1>
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
-<% if current_user && current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
+<div class="user-info card">
+  <p><strong>名前:</strong> <%= @user.name %></p>
+  <p><strong>メールアドレス:</strong> <%= @user.email %></p>
+  <p><strong>プロフィール:</strong> <%= @user.profile %></p>
+  <% if current_user && current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path, class: "edit-link" %>
+  <% end %>
+</div>
+
 <h2>ユーザーの投稿一覧</h2>
-<% @user.tweets.each do |t| %>
-  <p>投稿者: <%= t.user.name %></p>
-  <p>美容: <%= t.beauty %></p>
-  <p>食事: <%= t.food %></p>
-  <p>勉強: <%= t.study %></p>
-  <p>娯楽: <%= t.entertainment %></p>
-  <hr>
-<% end %>
-<!-- 以下はいいね機能を実装している場合-->
-<h2>ユーザーがいいねした投稿一覧</h2>
-<% @user.liked_tweets.each do |t| %>
-  <p>投稿者: <%= t.user.name %></p>
-  <p>美容: <%= t.beauty %></p>
-  <p>食事: <%= t.food %></p>
-  <p>勉強: <%= t.study %></p>
-  <p>娯楽: <%= t.entertainment %></p>
-  <hr>
-<% end %>
-<!-- ここまで-->
-<%= link_to "Tweet一覧に戻る", tweets_path %>
-<%= link_to "診断スタート", perfumes_path %>
+<div class="tweets-container">
+  <% @user.tweets.each do |t| %>
+    <div class="tweet-card">
+      <p><strong>投稿者:</strong> <%= t.user.name %></p>
+      <p>美容: <%= t.beauty %></p>
+      <p>食事: <%= t.food %></p>
+      <p>勉強: <%= t.study %></p>
+      <p>娯楽: <%= t.entertainment %></p>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="tweets-container">
+  <% @user.liked_tweets.each do |t| %>
+    <div class="tweet-card">
+      <p><strong>投稿者:</strong> <%= t.user.name %></p>
+      <p>美容: <%= t.beauty %></p>
+      <p>食事: <%= t.food %></p>
+      <p>勉強: <%= t.study %></p>
+      <p>娯楽: <%= t.entertainment %></p>
+    </div>
+  <% end %>
+</div>
+
+<div class="back-to-top">
+  <%= link_to 'TOPへ戻る', root_path, class: 'top-button' %>
+</div>
 
 
 

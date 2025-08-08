@@ -1,0 +1,108 @@
+.night-form-page {
+  background-color: #626476;
+  font-family: "Shippori Mincho", serif;
+  color: #fff;
+  min-height: 100vh;
+  padding: 2rem;
+
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Shippori Mincho", serif;
+  }
+
+  form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+  }
+
+  .field {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="file"] {
+    width: 80%;          
+    margin: 0 auto;       
+    display: block;       
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000;
+    font-family: "Shippori Mincho", serif;
+  }
+
+  input[type="file"] {
+    background-color: #f0f0f0;
+    font-family: "Shippori Mincho", serif;
+  }
+
+  .actions input[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #cb8a9a;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: "Shippori Mincho", serif;
+}
+
+/* ホバー時のスタイル（別で書く） */
+.actions input[type="submit"]:hover {
+  background-color: #a96d7f;
+}
+
+
+  #image-preview {
+    margin-top: 1rem;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    color: #fff;
+    margin-top: 2rem;
+    text-decoration: underline;
+  }
+}
+
+.top-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  width: 120px; /* ← ここ追加！ */
+  margin: 0 auto;
+  display: block;
+  text-decoration: none !important; /* ← 最後の手段として使えます */
+}
+
+.top-button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
