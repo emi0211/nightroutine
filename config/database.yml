@@ -31,4 +31,14 @@ production:
     adapter: postgresql
     encoding: unicode
     url: <%= ENV["DATABASE_URL"] %>
-  
+  cache:
+    url: <%= ENV["DATABASE_URL"] %>
+    database_tasks: false
+
+  queue:
+    url: <%= ENV["DATABASE_URL"] %>
+    database_tasks: false
+
+  cable:
+    url: <%= ENV["DATABASE_URL"] %>
+    database_tasks: false
